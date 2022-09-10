@@ -31,6 +31,11 @@
         <li class="nav-item">
           <a class="nav-link" href="#">สวัสดี <b><span sec:authentication="name"></span></b></a>
         </li>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/menu/add}">Add Menu</a>
+          </li>
+        </div>
         <li class="nav-item">
           <a class="btn btn-primary" th:href="@{/logout}">Logout</a>
         </li>
